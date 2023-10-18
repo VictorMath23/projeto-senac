@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap/js/bootstrap.bundle.min.js">
+    <script src="../js/script.js"></script>
+    <style>
+        .login-container {
+            background-color: rgba(211, 211, 211, 0.158);
+            border-radius: 12px;
+            box-shadow: 1px 2px 6px 6px #c6448571;
+            padding: 20px;
+            text-align: center;
+            width: 450px;
+            height: 400px;
+            margin-top: 180px;
+        }
+
+        .login-title {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 35px;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-button {
+            background-color: #c40e69;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #831a4e;
+        }
+
+        #senha{
+            background-color: rgba(211, 211, 211, 0.158);
+            border: none;
+            color: #c40e69;;
+            font-weight: bold;
+        }
+
+        #senha::placeholder {
+        color: rgba(255, 255, 255, 0.214);
+        font-weight: bold;
+        }
+
+        #matricula{
+            background-color: rgba(211, 211, 211, 0.158);
+            border: none;
+            color: #c40e69;
+            font-weight: bold;
+        }
+
+        #matricula::placeholder {
+        color: rgba(255, 255, 255, 0.211);
+        font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <img src="../img/iconh.png" class="iconh" alt="" onclick="toggleMenu()">
+    </header>
+    
+    <nav>
+        <div id="menus" class="menu">
+            <ul>
+                <li><a href="index" onclick="selecionarMenu(0)">Inicio</a></li>
+                <li><a href="consulta" onclick="selecionarMenu(1)">Acompanhe sua ideia</a></li>
+                <li><a href="login" class="active" onclick="selecionarMenu(2)">Avaliar ideias</a></li>
+            </ul>
+        </div>
+    </nav>
+            
+    <h1 class="text-center" style="color: rgb(255, 255, 255); font-weight: bold; font-size: 50pt; font-family: 'Play', sans-serif;">Thinking Eagles</h1>
+    <h5 class="text-center" style="color: white;">Onde sua ideia vale muito!</h5>
+
+    <div class="container my-5">
+        <div class="login-container mx-auto">
+            <h1 class="login-title">Faça Login</h1>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="matricula">Matrícula</label>
+                    <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Digite sua matrícula" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
