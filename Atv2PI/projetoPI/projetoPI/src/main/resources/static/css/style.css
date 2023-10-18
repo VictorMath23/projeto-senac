@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+
+body{
+    height: 100%;
+    background-image: url(../img/fundo3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1.text-center{
+    text-shadow: #c40e69 1px 2px 1px;
+}
+
+/* Estilos para o menu lateral */
+
+nav>div#menus>ul>li>a.active {
+    color: #c40e69; 
+    font-weight: bold; 
+}
+
+.aberto{
+    margin-left: 260px;
+    transition: 1.5s;
+}
+
+.fechado{
+    margin-left: 5px;
+    transition: 1.5s;
+}
+
+
+.menu {
+    position: fixed;
+    background-image: linear-gradient(to bottom, #54545457,#54545457);
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    top: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.menu ul li a:hover {
+    color: white;
+    text-shadow: #c40e69 1px 1px 1px;
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#header .iconh {
+    width: 60px;
+    margin-left: 5px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+
+table {
+    padding: 30px;
+    width: 60vw;
+    height: 40vh;
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(89, 89, 89, 0.488);
+    box-shadow: 0 2px 5px 1px #ffffff39;
+    backdrop-filter: blur(1.9px);
+    color: rgb(207, 207, 207);
+    margin-left: 50%;
+    margin-top: 310px;
+    transform: translate(-50%);
+  }
+  
+  td,
+  tr {
+    padding: auto;
+    border: 1px solid #c40e69;
+    font-weight: bold;
+    font-size: 1em;
+    white-space: nowrap;
+    text-shadow: rgb(0, 0, 0) 2px 1px 2px;
+  }
+  
+  th{
+    font-size: 1.6em;
+  }
+  
+  tbody > tr:nth-child(2n){
+    background-color: rgba(211, 211, 211, 0.158);
+  }
+
+  #myform{
+    margin-top: 180px;
+    margin-bottom: -300px;
+  }
+
+  #btnp{
+    background-color: #c40e69;
+    border: none;
+  }
+
+  #btnp:hover {
+    background-color: #831a4e;
+}
+
+  #frasep{
+    color: white;
+    text-shadow: #c40e69 1px 2px 1px;
+    font-weight: bold; 
+    font-size: 18pt; 
+    font-family: 'Play', sans-serif;
+    padding: 10px;
+  }
+
+  #specificSizeInputName{
+    background-color: rgba(211, 211, 211, 0.158);
+    color: #c40e69;
+    font-weight: bold;
+    border: none;
+  }
+
+  #specificSizeInputName::placeholder{
+    color: rgba(255, 255, 255, 0.211);
+    font-weight: bold;
+  }
+
+
+@media screen and (min-width: 768px) {
+   
+   
+}
