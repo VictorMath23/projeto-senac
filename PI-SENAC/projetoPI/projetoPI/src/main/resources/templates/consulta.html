@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acompanhe sua ideia</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../bootstrap/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/bootstrap/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/buscar-ideias.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
     </style>
@@ -44,36 +46,38 @@
             <label class="visually-hidden" for="specificSizeInputName">Name</label>
             <input type="text" class="form-control" id="specificSizeInputName" placeholder="Seu nome aqui">
           </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary" id="btnp">Submit</button>
-          </div>
         </form>
       </div>
       
-      
-      
-      
-      
-      
-    
-
-
+     
     <div id="table-container">
         <table class="table-bordered table-responsive-sm" id="my-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Matricula</th>
-                    <th>Area de atuação</th>
-                    <th>Nome do Gestor</th>
-                    <th>Beneficio da ideia</th>
-                    <th>Data</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Area de atuação</th>
+            <th>Nome do Gestor</th>
+            <th>Beneficio da ideia</th>
+            <th>Data</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="ideia : ${listaDeIdeias}">
+            <td class="id"><strong th:text="${ideia.id}"></strong></td>
+            <td th:text="${ideia.dono}" class="dono"></td>
+            <td th:text="${ideia.areaId}" class="area"></td>
+            <td th:text="${ideia.gestorId}" class="gestor"></td>
+            <td th:text="${ideia.beneficioId}" class="beneficio"></td>
+            <td th:text="${ideia.dataIdeia}" class="data"></td>
+            <td th:text="${ideia.status}" class="status"></td>
+            <td class="detalhes">                       
+            </td>
+        </tr>
+    </tbody>
+</table>
+
     </div>
     
 </body>

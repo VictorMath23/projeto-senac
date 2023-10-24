@@ -1,6 +1,5 @@
 package com.senac.api.filmes_api.controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -21,4 +20,12 @@ public class WebController {
     public String abrirPaginaLogin() {
         return "login";  // Nome do arquivo HTML da página login
     }
+    
+    @GetMapping("/admin")  // Mapeamento para a página login.html
+    public String abrirPaginaAdmin() {
+        return "admin";  // Nome do arquivo HTML da página login
+    }
+    
+    
+
 }

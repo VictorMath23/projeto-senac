@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,6 +93,8 @@
 
         
     </style>
+
+<link rel="stylesheet" href="../static/css/style.css" type="text/css"/>
 </head>
 <body>
 
@@ -116,19 +118,62 @@
     <div class="container my-5">
         <div class="login-container mx-auto">
             <h1 class="login-title">Faça Login</h1>
-            <form class="login-form">
+            <form class="login-form" action="/ideia/logar" method="POST">
                 <div class="form-group">
-                    <label for="matricula">Matrícula</label>
-                    <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Digite sua matrícula" required>
+                    <label for="matricula">Email</label>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Digite seu email ex: vsilva18" required>
                 </div>
                 <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite sua senha" required>
+                    <label for="senha">Matricula</label>
+                    <input type="password" id="matricula" name="matricula" class="form-control" placeholder="Digite sua senha" required>
                 </div>
                 <button type="submit" class="login-button">Login</button>
+                <p th:if="${error}" id="error" style="color: red;">Credenciais inválidas</p>
             </form>
         </div>
     </div>
-    
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".login-form");
+    const errorMessage = document.querySelector("#error");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        const email = document.querySelector("#email").value;
+        const matricula = document.querySelector("#matricula").value;
+
+        // Realiza a verificação em AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", `/ideia/get-user-info?email=${email}&matricula=${matricula}`, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.email && response.matricula && response.comite === "Y") {
+                        // Usuário autenticado com sucesso
+                        window.location.href = "/admin"; // Redirecionar para a página admin
+                    } else {
+                        // Acesso negado
+                        alert("usuario sem acesso !")
+                    }
+                } else if (xhr.status === 403) {
+                    // Acesso negado
+                    errorMessage.style.display = "block";
+                } else {
+                    // Outro erro
+                    alert("Ocorreu um erro ao processar a solicitação.");
+                }
+            }
+        };
+
+        xhr.send();
+    });
+});
+
+
+    </script>
+
 </body>
 </html>

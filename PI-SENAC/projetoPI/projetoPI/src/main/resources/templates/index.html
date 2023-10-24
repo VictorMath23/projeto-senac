@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thinking Eagles</title>
-   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../bootstrap/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cadastro-ideia.js"></script>
     <script src="../js/script.js"></script>
     <style>
 
@@ -72,71 +74,64 @@
              style="background-color: #ffffff2f; color: white; padding: 50px; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.416) 1px 1px 8px 1px;">
             <h2 class="text-center" style="color: #c40e69;">Preencha sua ideia aqui!</h2>
 
-            <form class="custom-form mx-auto" id="idea-form">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="form-group">
-                    <label for="matricula">Matrícula (8 dígitos):</label>
-                    <input type="number" class="form-control" id="matricula" placeholder="Digite sua matrícula"
-                           minlength="8" maxlength="8">
-                </div>
-                <div class="form-group">
-                    <label for="areaAtuacao">Área de Atuação:</label>
-                    <select class="form-control" id="areaAtuacao">
-                        <option value="">Selecione uma opção</option>
-                        <option value="1">Manufatura</option>
-                        <option value="2">Processos</option>
-                        <option value="3">Sistemas</option>
-                        <option value="4">Produto</option>
-                        <option value="5">Automação</option>
-                        <option value="6">Qualidade</option>
-                        <option value="7">Materiais</option>
-                    </select>
-                </div>
-            </form>
-            <form class="custom-form mx-auto">
-                <div class="form-group">
-                    <label for="gestor">Nome do Gestor:</label>
-                    <select class="form-control" id="gestor">
-                        <option value="">Selecione uma opção</option>
-                        <option value="1">Juari de Oliveira</option>
-                        <option value="2">Rodrigo Ramon</option>
-                        <option value="3">Fausto Corazza</option>
-                        <option value="4">Julio Tebalde</option>
-                        <option value="5">Giovanni Santana</option>
-                        <option value="6">Antonio Bordon</option>
-                        <option value="7">Julio Santos</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="beneficioIdeia">Benefício da Ideia:</label>
-                    <select class="form-control" id="beneficioIdeia">
-                        <option value="">Selecione uma opção</option>
-                        <option value="1">5S</option>
-                        <option value="2">Ganho de produção</option>
-                        <option value="3">Redução de SCRAP</option>
-                        <option value="4">Automatização</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="data">Data:</label>
-                    <input type="date" class="form-control" id="data">
-                </div>
-            </form>
-            <form class="custom-form mx-auto">
-                <div class="form-group">
-                    <label for="ideia">Digite sua Ideia:</label>
-                    <textarea class="form-control" id="ideia" rows="4" placeholder="Descreva sua ideia"></textarea>
-                </div>
-                <button type="button" class="mybtn" onclick="submitForm()">Enviar ideia</button>
-            </form>
+             <form class="custom-form mx-auto" id="idea-form" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="matricula">Matrícula (8 dígitos):</label>
+                        <input type="number" class="form-control" id="matricula" placeholder="Digite sua matrícula" minlength="8" maxlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="areaAtuacao">Área de Atuação:</label>
+                        <select class="form-control" id="areaAtuacao">
+                            <option value="">Selecione uma opção</option>
+                            <option value="1">Manufatura</option>
+                            <option value="2">Processos</option>
+                            <option value="3">Sistemas</option>
+                            <option value="4">Produto</option>
+                            <option value="5">Automação</option>
+                            <option value="6">Qualidade</option>
+                            <option value="7">Materiais</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gestor">Nome do Gestor:</label>
+                        <select class="form-control" id="gestor">
+                            <option value="">Selecione uma opção</option>
+                            <option value="1">Juari de Oliveira</option>
+                            <option value="2">Rodrigo Ramon</option>
+                            <option value="3">Fausto Corazza</option>
+                            <option value="4">Julio Tebalde</option>
+                            <option value="5">Giovanni Santana</option>
+                            <option value="6">Antonio Bordon</option>
+                            <option value="7">Julio Santos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="beneficioIdeia">Benefício da Ideia:</label>
+                        <select class="form-control" id="beneficioIdeia">
+                            <option value="">Selecione uma opção</option>
+                            <option value="1">5S</option>
+                            <option value="2">Ganho de produção</option>
+                            <option value="3">Redução de SCRAP</option>
+                            <option value="4">Automatização</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" class="form-control" id="data">
+                    </div>
+                    <div class="form-group">
+                        <label for="ideia">Digite sua Ideia:</label>
+                        <textarea class="form-control" id="ideia" rows="4" placeholder="Descreva sua ideia"></textarea>
+                    </div>
+                    <button type="submit" class="mybtn" id="bt-cadastrar">Enviar ideia</button>
+                </form>
         </div>
     </div>
 </div>
-<script>
-    
-</script>
+
 </body>
 </html>

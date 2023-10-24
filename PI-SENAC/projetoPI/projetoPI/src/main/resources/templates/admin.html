@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhe sua ideia</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/admin.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+    </style>
+</head>
+<body>
+    <header id="header">
+        <img src="../img/iconh.png" class="iconh" alt="" onclick="toggleMenu()">
+    </header>
+    
+    <nav>
+        <div id="menus" class="menu">
+            <ul>
+                <li><a href="index" onclick="selecionarMenu(0)">Inicio</a></li>
+                <li><a href="consulta" onclick="selecionarMenu(1)">Acompanhe sua ideia</a></li>
+                <li><a href="login" class="active" onclick="selecionarMenu(2)">Avaliar ideias</a></li>
+                <li><a href="login" onclick="selecionarMenu(2)" style="margin-top: 100px;">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <h1 class="text-center" style="color: rgb(255, 255, 255); font-weight: bold; font-size: 50pt; font-family: 'Play', sans-serif;">Thinking Eagles</h1>
+    <h5 class="text-center" style="color: white;">Seja bem vindo ao comitê!</h5>
+      
+     
+    <div id="table-container">
+        <table class="table-bordered table-responsive-sm table-hover" id="my-table-admin">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Area de atuação</th>
+            <th>Nome do Gestor</th>
+            <th>Beneficio da ideia</th>
+            <th>Data</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+
+    </tbody>
+</table>
+
+    </div>
+   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light"> <!-- Adicione as classes de estilo para o tema escuro e texto claro -->
+
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modal-title">Modal title</h1>
+        <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>Dono: </strong><span id="modal-dono"></span></p>
+        <p><strong>Área de Atuação: </strong><span id="modal-area"></span></p>
+        <p><strong>Gestor: </strong><span id="modal-gestor"></span></p>
+        <p><strong>Benefício da Ideia: </strong><span id="modal-beneficio"></span></p>
+        <p><strong>Data: </strong><span id="modal-data"></span></p>
+        <p><strong>Status: </strong><span id="modal-status"></span></p>
+        <p><strong>Proposta: </strong><span id="modal-proposta"></span></p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="aprovarBtn">Aprovar</button> 
+        <button type="button" class="btn btn-danger" id="reprovarBtn">Reprovar</button> 
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
